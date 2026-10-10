@@ -1,0 +1,4 @@
+interface:
+  display_name: "CodeLume-Skill"
+  short_description: "生成有源码证据支撑的源码学习教科书"
+  default_prompt: "请使用 $codelume-skill 分析当前项目，并生成一部有源码证据支撑、讲解其架构与设计的源码学习教科书。"

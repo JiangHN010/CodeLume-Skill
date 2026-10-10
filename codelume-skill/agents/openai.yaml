@@ -1,0 +1,4 @@
+interface:
+  display_name: "CodeLume-Skill"
+  short_description: "Create evidence-grounded source-learning textbooks"
+  default_prompt: "Use $codelume-skill to analyze this repository and create an evidence-grounded source-learning textbook about its architecture and design."
