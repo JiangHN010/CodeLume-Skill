@@ -1,0 +1,63 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "codelume-skill",
+  "version": "1.0.0",
+  "description": "Turn unfamiliar source repositories into evidence-grounded learning guides that explain architecture, runtime flows, design reasoning, and trade-offs.",
+  "author": {
+    "name": "Haonna",
+    "url": "https://github.com/JiangHN010"
+  },
+  "homepage": "https://github.com/JiangHN010/CodeLume-Skill",
+  "repository": "https://github.com/JiangHN010/CodeLume-Skill",
+  "license": "MIT",
+  "keywords": [
+    "source-code-learning",
+    "codebase-understanding",
+    "architecture",
+    "developer-education",
+    "codex"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "CodeLume-Skill",
+        "shortDescription": "Learn unfamiliar codebases",
+        "longDescription": "CodeLume-Skill helps programmers study an unfamiliar source repository as a connected, evidence-grounded learning guide. It maps the architecture, traces at least one real runtime flow, explains important design decisions and trade-offs, distinguishes verified facts from inference, and links explanations back to source. It uses the files and tools already available to the host and does not provide repository hosting, authentication, or external data services.",
+        "developerName": "Haonna",
+        "category": "Developer Tools",
+        "capabilities": [
+          "Map codebase architecture",
+          "Trace runtime flows",
+          "Explain design trade-offs",
+          "Create source-linked learning guides"
+        ],
+        "websiteURL": "https://github.com/JiangHN010/CodeLume-Skill",
+        "supportURL": "https://github.com/JiangHN010/CodeLume-Skill/issues",
+        "privacyPolicyURL": "https://github.com/JiangHN010/CodeLume-Skill/blob/main/PRIVACY.md",
+        "termsOfServiceURL": "https://github.com/JiangHN010/CodeLume-Skill/blob/main/TERMS.md",
+        "defaultPrompt": [
+          "Study this repository and explain its architecture and one complete runtime flow.",
+          "Turn this module into a source-linked learning guide with design trade-offs.",
+          "Trace how this feature works from input to observable result in the source."
+        ],
+        "brandColor": "#075985",
+        "composerIcon": "./assets/codelume-icon.png",
+        "logo": "./assets/codelume-icon.png"
+      },
+      "review": {
+        "commerce": false,
+        "commerce_description": "CodeLume-Skill does not sell products, process payments, or facilitate purchases."
+      },
+      "publication": {
+        "countries": [],
+        "release_notes": "Initial public Skills-only release with bilingual source-learning guidance and evidence-grounded architecture and runtime-flow analysis.",
+        "translations": {
+          "zh-CN": {
+            "subtitle": "把陌生代码库变成源码教材",
+            "description": "CodeLume-Skill 帮助程序员把陌生源码仓库学习成一份连贯、有证据支撑的教材。它会梳理整体架构，追踪至少一条真实运行流程，解释关键设计决策与取舍，区分已验证事实和推断，并把讲解链接回真实源码。"
+          }
+        }
+      }
+    }
+  }
+}

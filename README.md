@@ -23,11 +23,13 @@ CodeLume-Skill 是一个面向 Codex 的源码学习 Skill。它会分析真实�
 ## Repository layout
 
 ```text
-codelume-skill/
-├── SKILL.md                  # English canonical skill
-├── agents/openai.yaml        # Codex UI metadata
-├── references/               # Analysis and textbook section contracts
-└── translations/zh-CN/       # Synchronized Chinese translation
+plugin.json                       # Portable Skills-only plugin manifest
+assets/codelume-icon.png          # Plugin listing and composer icon
+skills/codelume-skill/
+├── SKILL.md                      # English canonical skill
+├── agents/openai.yaml            # Codex UI metadata
+├── references/                   # Analysis and textbook section contracts
+└── translations/zh-CN/           # Synchronized Chinese translation
 ```
 
 The English files are canonical. Every content change must update the matching
@@ -43,9 +45,9 @@ Install only the English runtime files.
 $codexHome = if ($env:CODEX_HOME) { $env:CODEX_HOME } else { Join-Path $HOME ".codex" }
 $target = Join-Path $codexHome "skills\codelume-skill"
 New-Item -ItemType Directory -Force $target, "$target\agents", "$target\references" | Out-Null
-Copy-Item "codelume-skill\SKILL.md" "$target\SKILL.md" -Force
-Copy-Item "codelume-skill\agents\openai.yaml" "$target\agents\openai.yaml" -Force
-Copy-Item "codelume-skill\references\*.md" "$target\references" -Force
+Copy-Item "skills\codelume-skill\SKILL.md" "$target\SKILL.md" -Force
+Copy-Item "skills\codelume-skill\agents\openai.yaml" "$target\agents\openai.yaml" -Force
+Copy-Item "skills\codelume-skill\references\*.md" "$target\references" -Force
 ```
 
 ### Bash
@@ -53,13 +55,21 @@ Copy-Item "codelume-skill\references\*.md" "$target\references" -Force
 ```bash
 target="${CODEX_HOME:-$HOME/.codex}/skills/codelume-skill"
 mkdir -p "$target/agents" "$target/references"
-cp codelume-skill/SKILL.md "$target/SKILL.md"
-cp codelume-skill/agents/openai.yaml "$target/agents/openai.yaml"
-cp codelume-skill/references/*.md "$target/references/"
+cp skills/codelume-skill/SKILL.md "$target/SKILL.md"
+cp skills/codelume-skill/agents/openai.yaml "$target/agents/openai.yaml"
+cp skills/codelume-skill/references/*.md "$target/references/"
 ```
 
 Restart Codex or start a new conversation after installation so the skill list
 is refreshed.
+
+## Plugin package
+
+This repository also follows the portable Agent Plugins 1.0 layout for a
+Skills-only plugin. The root `plugin.json` supplies directory metadata, while
+Codex and compatible hosts discover the runtime skill under
+`skills/codelume-skill/`. The package contains no MCP server, external service,
+or authentication configuration.
 
 ## Use
 
@@ -78,3 +88,9 @@ reasoning behind its most important design decisions.
 ## License
 
 [MIT](LICENSE)
+
+## Policies and support
+
+- [Privacy policy](PRIVACY.md)
+- [Terms of service](TERMS.md)
+- [Support and issue reports](https://github.com/JiangHN010/CodeLume-Skill/issues)
